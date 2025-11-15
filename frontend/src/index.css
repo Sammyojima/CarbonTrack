@@ -1,0 +1,30 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+body {
+  background-color: theme('colors.background');
+  color: theme('colors.textPrimary');
+  font-family: theme('fontFamily.sans');
+}
+
+/* Print view */
+@media print {
+  body * {
+    visibility: hidden; /* hide everything */
+  }
+
+  /* Show only the dashboard results container */
+  .printable-area, .printable-area * {
+    visibility: visible;
+  }
+
+  /* Optional: remove extra spacing */
+  .printable-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
