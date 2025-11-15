@@ -24,7 +24,7 @@
 - Secure authentication (register/login/logout) using JWT.
 - REST API for handling process data, emission calculations, and reports.
 - Integration-ready for future real-time data streaming from plant sensors.
-- Scalable database support (PostgreSQL or MongoDB).
+- Scalable database support (MongoDB).
 
 ### Core Functionalities
 - Real-time monitoring of emissions.
