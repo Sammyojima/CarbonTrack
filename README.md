@@ -78,7 +78,7 @@ carbontrack/
 ## ⚙️ Setup & Installation
 
 ### Frontend
-```bash
+
 cd frontend
 npm install
 npm run dev        # Run locally
@@ -142,7 +142,7 @@ Chemical Engineer | Software Developer | Environmental Tech Enthusiast
 LinkedIn: www.linkedin.com/in/samuel-o-idakwo
 GitHub: Sammyojima
 
-📄 License
+### 📄 License
 
 This project is licensed under the MIT License. See the LICENSE
  file for details.
