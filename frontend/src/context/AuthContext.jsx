@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   // ✅ Create axios instance with credentials + correct base URL
   const api = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://carbontrack-rwxo.onrender.com",
     withCredentials: true,
   });
 
