@@ -1,12 +1,15 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
+/* Body defaults for light/dark mode using Tailwind classes */
 body {
-  background-color: theme('colors.background');
-  color: theme('colors.textPrimary');
-  font-family: theme('fontFamily.sans');
+  @apply bg-background text-textPrimary font-sans;
+}
+
+/* Dark mode overrides */
+.dark body {
+  @apply bg-primary text-gray-200;
 }
 
 /* Print view */
