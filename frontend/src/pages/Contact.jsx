@@ -17,10 +17,10 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus(""); // reset status
+    setStatus("");
 
     try {
-      const response = await fetch("https://carbontrack-rwxo.onrender.com/api", {
+      const response = await fetch("https://carbontrack-rwxo.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-primary text-gray-100 flex flex-col items-center justify-center p-6 md:p-12 space-y-8">
       <h1 className="text-3xl md:text-4xl font-extrabold text-accent">Contact</h1>
-      
+
       <p className="text-gray-300 text-center max-w-xl leading-relaxed">
         Developed by <span className="font-semibold text-[#00C49A]">Samuel Ojima Idakwo</span>
       </p>
@@ -51,15 +51,24 @@ export default function Contact() {
       <div className="flex flex-col md:flex-row gap-6 text-gray-300 text-center">
         <div className="flex items-center gap-2">
           <span className="text-xl">📧</span>
-          <a href="mailto:samuelojimaidakwo@gmail.com" className="hover:text-accent transition">samuelojimaidakwo@gmail.com</a>
+          <a href="mailto:samuelojimaidakwo@gmail.com" className="hover:text-accent transition">
+            samuelojimaidakwo@gmail.com
+          </a>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xl">📞</span>
-          <a href="tel:+234810751032" className="hover:text-accent transition">+234 810 751 032</a>
+          <a href="tel:+234810751032" className="hover:text-accent transition">
+            +234 810 751 032
+          </a>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xl">🔗</span>
-          <a href="https://www.linkedin.com/in/samuel-o-idakwo" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
+          <a
+            href="https://www.linkedin.com/in/samuel-o-idakwo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition"
+          >
             LinkedIn
           </a>
         </div>
