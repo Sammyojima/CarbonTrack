@@ -6,8 +6,8 @@
 
 ## 🌐 Live Demo
 
-- **Frontend (Vercel)**: [Your Vercel URL]  
-- **Backend API (Render)**: [Your Render URL]
+- **Frontend (Vercel)**: https://carbon-track-nine.vercel.app/
+- **Backend API (Render)**: https://carbontrack-rwxo.onrender.com
 
 ---
 
