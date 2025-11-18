@@ -4,24 +4,36 @@ import axios from "axios";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem("user")));
+  const [user, setUser] = useState(() =>
+    JSON.parse(localStorage.getItem("user"))
+  );
   const [loading, setLoading] = useState(true);
 
-  // ✅ Create axios instance with credentials + correct base URL
+  // ✅ Use environment variable
+  const apiBaseURL = import.meta.env.VITE_API_BASE_URL;
+
+  // ✅ Create axios instance with correct base URL
   const api = axios.create({
-    baseURL: "https://carbontrack-rwxo.onrender.com",
+    baseURL: apiBaseURL, // <-- uses https://carbontrack-rwxo.onrender.com/api
     withCredentials: true,
   });
 
   // ✅ Register user
   const register = async (name, email, password) => {
     try {
-      const { data } = await api.post("/auth/register", { name, email, password });
+      const { data } = await api.post("/auth/register", {
+        name,
+        email,
+        password,
+      });
       localStorage.setItem("user", JSON.stringify(data));
       setUser(data);
       return data;
     } catch (error) {
-      console.error("❌ Registration failed:", error.response?.data || error.message);
+      console.error(
+        "❌ Registration failed:",
+        error.response?.data || error.message
+      );
       throw error;
     }
   };
@@ -34,7 +46,10 @@ export const AuthProvider = ({ children }) => {
       setUser(data);
       return data;
     } catch (error) {
-      console.error("❌ Login failed:", error.response?.data || error.message);
+      console.error(
+        "❌ Login failed:",
+        error.response?.data || error.message
+      );
       throw error;
     }
   };
@@ -53,7 +68,9 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, register, login, logout, loading }}>
+    <AuthContext.Provider
+      value={{ user, register, login, logout, loading }}
+    >
       {children}
     </AuthContext.Provider>
   );
