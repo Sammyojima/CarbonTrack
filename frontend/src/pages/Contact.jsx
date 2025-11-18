@@ -20,7 +20,7 @@ export default function Contact() {
     setStatus(""); // reset status
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("https://carbontrack-rwxo.onrender.com/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
