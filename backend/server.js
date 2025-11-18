@@ -20,12 +20,14 @@ mongoose
   .then(() => console.log("📌 MongoDB connected successfully"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://carbon-track-nine.vercel.app"
+  ],
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true,
+}));
 
 app.use(express.json());
 
