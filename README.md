@@ -99,7 +99,7 @@ JWT_SECRET=your_jwt_secret
 
 For the frontend, create .env:
 
-VITE_API_URL=https://your-backend-render-url.com/api
+VITE_API_URL=https://carbontrack-rwxo.onrender.com
 
 
 Note: Never commit .env files to GitHub.
